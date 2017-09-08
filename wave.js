@@ -1,9 +1,12 @@
-var wave=function(n,p,t,r,pe){
-  var numberOfPoints=p.length;
-  var Points=p;
-  var tranformedPoints=t;
-  var range=r;
-  var Period=p
+const Point = require('./Point.js');
+
+
+var wave=function(array){
+  var numberOfPoints=array.length;
+  var Points=array;
+  var transformedPoints=array;
+  var range;
+  var Period;
 }
 
 function getRange(){
@@ -18,14 +21,22 @@ function getPointArray(){
   return Points;
 }
 
-function shiftX(v){
-  Point.getX()=
+function shiftx(v){
+  transformedPoints.getX()=Point.getx+v;
 }
 
-function shiftY(v){
-  Point.getY()
+function shifty(v){
+  transformedPoints.getY()=Point.gety+v
 }
 
-function stretchX(v){
-  Points
+function stretchx(v){
+  Points.getx()=Point.getx*v
+}
+
+function stretchy(v){
+    Point.gety()=Point.gety*v
+
+transformation(){
+
+}
 }
