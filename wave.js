@@ -1,9 +1,6 @@
-const Point = require('./Point.js');
+const point = require('./Point.js');
 
-let p1;
-let p2;
-let p3;
-var wave=function(array){
+var wave =function(array){
   var numberOfPoints=array.length;
   var Points=array;
   var transformedPoints=array;
@@ -67,16 +64,13 @@ function stretchy(v){
   }
 
   function outputOf(xvalue){
-      let reminder= xvalue%(transformedPoints.length
+      let reminder= xvalue%(numberOfPoints)
         return transformedPoints[reminder].gety();
-
-    }
-    else{
-      return "Y not found";
-    }
   }
 
   function calculateSpan(array){
     Math.max(array)-Math.min(array);
   }
 }
+
+module.exports = wave;

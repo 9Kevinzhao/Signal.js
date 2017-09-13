@@ -1,4 +1,4 @@
-var Point = function(xcor,ycor){
+var point = function(xcor,ycor){
     let x=xcor;
     let y=ycor;
 
@@ -29,3 +29,5 @@ var Point = function(xcor,ycor){
 
     }
 }
+
+module.exports = point;
