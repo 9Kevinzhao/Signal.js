@@ -6,7 +6,6 @@ var wave =function(array){
   var transformedPoints=array;
   var range;
   var Period;
-}
 
 function getRange(){
   return range;
@@ -21,45 +20,46 @@ function getPointArray(){
 }
 
 function shiftx(v){
-  for(let i=0;i>numberOfPoints;i++){
+  for(let i=0;i<numberOfPoints;i++){
     let oldx=transformedPoints[i].getx();
     let oldy=transformedPoints[i].gety();
     oldx = oldx+v;
-    let changedpoint=new Point(oldx,oldy);
+    let changedpoint=new point(oldx,oldy);
     transformedPoints[i]= changedpoint;
   }
 }
 
 function shifty(v){
-  for(let i=0;i>numberOfPoints;i++){
+  for(let i=0;i<numberOfPoints;i++){
     let oldx=transformedPoints[i].getx();
     let oldy=transformedPoints[i].gety();
     oldy = oldy+v;
-    let changedpoint=new Point(oldx,oldy);
+    let changedpoint=new point(oldx,oldy);
     transformedPoints[i]= changedpoint;
   }
 }
 
 function stretchx(v){
-  for(i=0;i>numberOfPoints;i++){
+  for(i=0;i<numberOfPoints;i++){
     let oldx=transformedPoints[i].getx();
     let oldy=transformedPoints[i].gety();
     oldx = oldx*v;
-    let changedpoint=new Point(oldx,oldy);
+    let changedpoint=new point(oldx,oldy);
     transformedPoints[i]= changedpoint;
   }
 }
 
 function stretchy(v){
-  for(i=0;i>numberOfPoints;i++){
+  for(i=0;i<numberOfPoints;i++){
     let oldx=transformedPoints[i].getx();
     let oldy=transformedPoints[i].gety();
     oldy = oldy*v;
-    let changedpoint=new Point(oldx,oldy);
+    let changedpoint=new point(oldx,oldy);
     transformedPoints[i]= changedpoint;
   }
+}
 
-  function transformation(){
+  function transform(){
     return transformedPoints
   }
 
@@ -71,6 +71,7 @@ function stretchy(v){
   function calculateSpan(array){
     Math.max(array)-Math.min(array);
   }
+  return{shiftx,shifty,stretchx,stretchy,transform,outputOf}
 }
 
 module.exports = wave;

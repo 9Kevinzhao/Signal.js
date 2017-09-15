@@ -10,11 +10,13 @@ var point = function(xcor,ycor){
         return y;
     }
 
-    function magnitute(){
-        let dist= Math.sqrt(x*x+y+y);
+    function magnitude(){
+        let dist= Math.sqrt(x*x+y*y);
         return dist;
     }
-
+    function print(){
+        console.log("("+x+", "+y+")");
+    }
     function distanceto(p2){
 
         let xsquared = (x-p2.getx())*(x-p2.getx());
@@ -25,9 +27,7 @@ var point = function(xcor,ycor){
     function direction(){
         return Math.atn(y/x)*180/Math.PI;
     }
-    return{getx,gety,magnitude,distance,direction
-
-    }
+    return{getx,gety,magnitude,distanceto,direction,print}
 }
 
 module.exports = point;
