@@ -2,21 +2,21 @@ const point = require('./Point.js');
 
 var wave =function(array){
   var numberOfPoints=array.length;
-  var Points=array;
+  var points=array;
   var transformedPoints=array;
   var range;
-  var Period;
+  var period;
 
 function getRange(){
   return range;
 }
 
 function getPeriod(){
-  return Period;
+  return period;
 }
 
 function getPointArray(){
-  return Points;
+  return points;
 }
 
 function shiftx(v){
@@ -63,14 +63,16 @@ function stretchy(v){
     return transformedPoints
   }
 
-  function outputOf(xvalue){
-      let reminder= xvalue%(numberOfPoints)
-        return transformedPoints[reminder].gety();
+  function calculateSpan(array){
+  period=Math.max(...array)-Math.min(...array);
   }
 
-  function calculateSpan(array){
-    Math.max(array)-Math.min(array);
+  function outputOf(xvalue){
+      let reminder= xvalue%period;
+        return array[reminder].gety();
   }
+
+
   return{shiftx,shifty,stretchx,stretchy,transform,outputOf}
 }
 

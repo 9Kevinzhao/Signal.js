@@ -34,6 +34,7 @@ function main(){
     console.log("--------");
     console.log(testWave.outputOf(9));
 
+
 }
 
 main();
